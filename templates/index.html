@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB BG Remover</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>AB BG Remover</h1>
+            <p>Background remover app Made by - Abid</p>
+        </div>
+
+        <div class="card">
+
+            <form action="/process" method="POST" enctype="multipart/form-data">
+
+                <label class="upload-box">
+                    <input type="file" name="image" id="fileInput" accept="image/*" required>
+
+                    <div class="upload-content">
+                        <div class="upload-icon">📷</div>
+                        <h3>Upload Image</h3>
+                        <p>Click to choose an image</p>
+                    </div>
+                </label>
+
+                <img id="preview">
+
+                <div class="section">
+                    <h4>Background Color</h4>
+                    <input type="color" name="customColor" value="#ffffff">
+                </div>
+
+                <div class="section">
+                    <h4>Mode</h4>
+                    <select name="mode">
+                        <option value="normal">Normal</option>
+                        <option value="passport">Passport Photo</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">
+                    Remove Background
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
